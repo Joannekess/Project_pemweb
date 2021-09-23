@@ -18,51 +18,53 @@
 		return $rows;
 	}
 
-	function addStudent($data) {
+	function addNews($data) {
 		global $conn;
 
-		$ID = htmlspecialchars($data["ID"]);
-		$FirstName = htmlspecialchars($data["FirstName"]);
-		$LastName = htmlspecialchars($data["LastName"]);
-		$Description = htmlspecialchars($data["Description"]);
+		// $no = htmlspecialchars($data["no"]);
+		$judul = htmlspecialchars($data["judul"]);
+		$kategori = htmlspecialchars($data["kategori"]);
+		$penulis = htmlspecialchars($data["penulis"]);
+		$konten = htmlspecialchars($data["konten"]);
+		$tanggal = htmlspecialchars($data["tanggal"]);
 
 		//query insert data
-		$query = "INSERT INTO student VALUES('$ID', '$FirstName', '$LastName', '$Description')";
+		$query = "INSERT INTO news VALUES('', '$judul', '$kategori', '$penulis', '$konten', '$tanggal')";
 		mysqli_query($conn, $query);
 
 		return mysqli_affected_rows($conn); 
 	}
 
-    //
 	function delete($id) {
 		global $conn;
-		mysqli_query($conn, "DELETE FROM student WHERE ID = $id");
+		mysqli_query($conn, "DELETE FROM news WHERE no = $id");
 
 		return mysqli_affected_rows($conn);
 	}
 
-    //
 	function update($data) {
 		global $conn;
 
 		$id = $data["id"];
-		$ID = htmlspecialchars($data["ID"]);
-		$FirstName = htmlspecialchars($data["FirstName"]);
-		$LastName = htmlspecialchars($data["LastName"]);
-		$Description = htmlspecialchars($data["Description"]);
+		$no = htmlspecialchars($data["no"]);
+		$judul = htmlspecialchars($data["judul"]);
+		$kategori = htmlspecialchars($data["kategori"]);
+		$penulis = htmlspecialchars($data["penulis"]);
+		$konten = htmlspecialchars($data["konten"]);
+		$tanggal = htmlspecialchars($data["tanggal"]);
 
 		//query update data
-		$query = "UPDATE student 
-				  SET ID ='$ID', 
-				  	  FirstName = '$FirstName', 
-				  	  LastName = '$LastName', 
-				  	  Description = '$Description'
-				  WHERE ID = $id;
+		$query = "UPDATE news 
+				  SET no = '$no',
+				  	  judul = '$judul', 
+				  	  kategori = '$kategori',
+				  	  penulis = '$penulis',
+				  	  konten = '$konten',
+				  	  tanggal = '$tanggal'
+				  WHERE no = $id;
 				  ";
 		mysqli_query($conn, $query);
 
 		return mysqli_affected_rows($conn); 
 	}
-
-
 ?>

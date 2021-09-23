@@ -1,14 +1,13 @@
 <?php  
 
 	require 'functions.php';
-
 	$id = $_GET['id'];
 
 	if( delete ($id) > 0) {
 		echo "
 				<script>
 					alert('Data successfully deleted!');
-					window.location.href = 'challenge.php';
+					window.location.href = 'tampilanumum.php';
 				</script>";
 			} else {
 				echo 
