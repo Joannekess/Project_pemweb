@@ -9,10 +9,14 @@
 require 'functions.php';
 
 //get data
-$id = $_GET["id"];
+if(isset($_POST['idupdate'])){
+	$id = $_POST['idupdate'];
+	$news = query("SELECT * FROM news WHERE idnews = $id")[0];
+}
 
 //query data
-$news = query("SELECT * FROM news WHERE no = $id")[0];
+
+$conn = mysqli_connect("localhost", "root", "", "pemwebuts");
 
 //update data in database
 if (isset($_POST["submit"])) {
@@ -60,7 +64,7 @@ if (isset($_POST["submit"])) {
 	</div>
 
 		<form action="" method="POST">
-		    <input type="hidden" name="id" value="<?php echo $news['no']; ?>">
+		    <input type="hidden" name="idnews" value="<?php echo $news['idnews']; ?>">
 			<div class="form-group col-4">
 					<label for="judul">Judul</label>
 					<input class="form-control form-control-sm" type="text" name="judul" id="judul" placeholder="Input Judul" value="<?php echo $news['judul']; ?>" required>
@@ -97,7 +101,9 @@ if (isset($_POST["submit"])) {
 			</div>
 			<div class="form-group col-4">
 					<button class="btn btn-success" type="submit" name="submit">Submit</button>
-					<button class="btn btn-warning" type="reset" name="reset">Reset</button>
+					<a href="tampilanumum.php">
+					<button type="button" name="cancel" class="btn btn-info">Cancel</button>
+					</a>
 			</div>
 		</form>
 	</div>

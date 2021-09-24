@@ -87,7 +87,9 @@
 			</div>
 			<div class="form-group col-4">
 					<button class="btn btn-success" type="submit" name="submit">Submit</button>
-					<button class="btn btn-warning" type="reset" name="reset">Reset</button>
+					<a href="tampilanumum.php">
+						<button type="button" name="cancel" class="btn btn-info">Cancel</button>
+					</a>
 			</div>
 		</form>
 	</div>

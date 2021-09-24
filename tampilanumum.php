@@ -174,7 +174,17 @@ $news = query("SELECT * FROM news");
 					<td><?php echo $row['penulis']; ?></td>
 					<td><?php echo $row['konten']; ?></td>
 					<td><?php echo $row['tanggal']; ?></td>
-					<td><a href="update.php?id=<?php echo $row['no']; ?>"><i class="fas fa-edit"></i></a> | <a href="delete.php?id=<?php echo $row['no']; ?>" onclick="return confirm('are you sure you want to delete <?php echo $row['judul']; ?> ?')"><i class="fas fa-trash-alt"></i></a></td>
+					<td style="display: flex;">
+						<form action="update.php" method="POST" style="margin-right: 10px;">
+                            <input type="hidden" name="idupdate" value="<?php echo $row['idnews'] ?>">
+                            <button class="btn btn-success" type="submit">Update</button>
+                        </form>
+                        <form action="delete.php" method="POST">
+							<input type="hidden" name="id" value="<?php echo $row['idnews'] ?>">
+                            <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure you want to delete <?php echo $row['judul']?>?');">Delete</button>
+						</form>
+					</td>
+
 				</tr>
 				<?php $i++; ?>
 			<?php endforeach; ?>

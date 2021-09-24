@@ -21,7 +21,7 @@
 	function addNews($data) {
 		global $conn;
 
-		// $no = htmlspecialchars($data["no"]);
+		// $idnews = htmlspecialchars($data["idnews"]);
 		$judul = htmlspecialchars($data["judul"]);
 		$kategori = htmlspecialchars($data["kategori"]);
 		$penulis = htmlspecialchars($data["penulis"]);
@@ -37,7 +37,7 @@
 
 	function delete($id) {
 		global $conn;
-		mysqli_query($conn, "DELETE FROM news WHERE no = $id");
+		mysqli_query($conn, "DELETE FROM news WHERE idnews = $id");
 
 		return mysqli_affected_rows($conn);
 	}
@@ -45,8 +45,8 @@
 	function update($data) {
 		global $conn;
 
-		$id = $data["id"];
-		$no = htmlspecialchars($data["no"]);
+		// $idnews = $data["idnews"];
+		$idnews = htmlspecialchars($data["idnews"]);
 		$judul = htmlspecialchars($data["judul"]);
 		$kategori = htmlspecialchars($data["kategori"]);
 		$penulis = htmlspecialchars($data["penulis"]);
@@ -55,13 +55,13 @@
 
 		//query update data
 		$query = "UPDATE news 
-				  SET no = '$no',
+				  SET 
 				  	  judul = '$judul', 
 				  	  kategori = '$kategori',
 				  	  penulis = '$penulis',
 				  	  konten = '$konten',
 				  	  tanggal = '$tanggal'
-				  WHERE no = $id;
+				  WHERE idnews = $idnews;
 				  ";
 		mysqli_query($conn, $query);
 
