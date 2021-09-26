@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Lemon";
+  src: url("./font/lemonmilk.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Louis";
+  src: url("./font/louis.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  background: #c4eef1;
+  background-image: url(./images/kotak.png);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  text-align: center;
+}
+#nav {
+    transition: 0.5s;
+    padding: 3px;
+    opacity: 0.8;
+  }
+
+.navbar{
+    opacity: 0.8;
+}
+.btn {
+  background: #07949e;
+  border-radius: 20px;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+  float: right;
+  padding: 10px 15px;
+  margin-top: 12px;
+  text-decoration: none;
+  color: white;
+  font-family: "Lemon";
+}
+.btnLogin {
+    background: #07949e;
+    border-radius: 50px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    text-decoration: none;
+    color: white;
+    font-family: "Lemon";
+    margin: auto;
+    font-size: 20px;
+    padding: 0 30px;
+  }
+
+.title img{
+    max-width: 50%;
+    margin: auto;
+}
+
+.login{
+    font-family: "Lemon";
+    background: white;
+    border-radius: 55px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    max-width: 40%;
+    margin: auto;
+    padding: 30px 45px;
+}
+
+.login,h1{
+    font-size: 43px;
+    line-height: 58px;
+    color: #07949E;
+}
+
+li{
+    list-style-type:none;
+    font-size: 20px;
+    text-align: left;
+}
+
+input{
+    height: 35px;
+    border-radius: 30px;
+    width: 100%;
+}
+
+.textmini{
+    font-size: 19px;
+    font-family:"Louis";
+}
+
+ul{
+    margin-right: 10px;
+}
+
